@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="icon" type="image/png" href="Logo Icon.png">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <script>
+        const VALID_PIN = "2025";
+
+        function login() {
+            const pin = document.getElementById("pin").value;
+
+            if (pin === VALID_PIN) {
+                localStorage.setItem("authenticated", "true");
+                alert("Login successful!");
+                window.location.href = "index.html";
+            } else {
+                alert("Invalid PIN. Please try again.");
+            }
+        }
+    </script>
+    <style>
+         body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background: linear-gradient(to bottom, #a2c9f5, #f5f5f5);
+            overflow: hidden;
+        }
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            overflow: hidden;
+            font-family: 'Roboto', sans-serif;
+            background-color: #f4f4f4; /* Added a background color */
+        }
+
+        .container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            text-align: center;
+            height: 100%;
+        }
+
+        .form_area {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            background-color: rgba(237, 220, 217, 0.9); /* Semi-transparent background */
+            padding: 20px;
+            border: 2px solid #264143;
+            border-radius: 20px;
+            box-shadow: 3px 4px 0px 1px #E99F4C;
+        }
+
+        .title {
+            color: #264143;
+            font-weight: 900;
+            font-size: 1.5em;
+            margin-top: 20px;
+        }
+
+        .sub_title {
+            font-weight: 600;
+            margin: 5px 0;
+        }
+
+        .form_group {
+            display: flex;
+            flex-direction: column;
+            align-items: baseline;
+            margin: 10px;
+        }
+
+        .form_style {
+            outline: none;
+            border: 2px solid #264143;
+            box-shadow: 3px 4px 0px 1px #E99F4C;
+            width: 290px;
+            padding: 12px 10px;
+            border-radius: 4px;
+            font-size: 15px;
+        }
+
+        .form_style:focus, .btn:focus {
+            transform: translateY(4px);
+            box-shadow: 1px 2px 0px 0px #E99F4C;
+        }
+
+        .btn {
+            padding: 15px;
+            margin: 25px 0px;
+            width: 290px;
+            font-size: 15px;
+            background: #DE5499;
+            border-radius: 10px;
+            font-weight: 800;
+            box-shadow: 3px 3px 0px 0px #E99F4C;
+        }
+
+        .btn:hover {
+            opacity: .9;
+        }
+
+        .link {
+            font-weight: 800;
+            color: #264143;
+            padding: 5px;
+        }
+
+        footer {
+            margin-top: 20px;
+            font-size: 14px;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="form_area">
+            <p class="title">LOGIN</p>
+            <form action="javascript:void(0)">
+                <div class="form_group">
+                    <label class="sub_title" for="pin">PIN</label>
+                    <input placeholder="Enter your PIN" class="form_style" type="password" id="pin" maxlength="4">
+                </div>
+                <div>
+                    <button type="button" class="btn" onclick="login()">Login</button>
+                </div>
+            </form>
+            <footer>Made by Jack Tompkins</footer>
+        </div>
+    </div>
+
+</body>
+</html>

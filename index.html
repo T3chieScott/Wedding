@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Wedding Card</title>
+  <link rel="icon" type="image/png" href="Logo Icon.png">
+  <link rel="stylesheet" href="styles.css">
+	<script>
+        // Function to check if the user is authenticated
+         function checkAuthentication() {
+            const isAuthenticated = localStorage.getItem("authenticated");
+            if (!isAuthenticated) {
+               alert("Access denied. Please log in.");
+               window.location.href = "login.html"; // Redirect to login page
+            }
+        }
+
+        document.addEventListener("DOMContentLoaded", checkAuthentication);
+    </script>
+</head>
+<body>
+  <!-- Header with logo -->
+  <header>
+    <img src="logo.png" alt="Logo" class="logo">
+  </header>
+
+  <!-- Main container -->
+  <div class="container">
+    <!-- Floating mail -->
+    <div class="floating-mail">
+      <img src="mail1.png" alt="Mail Icon" id="mailIcon" />
+    </div>
+
+    <!-- Card container -->
+    <div class="card-container" id="cardContainer" style="display: none;">
+      <img src="cover.png" alt="Card Cover" id="cardCover" class="card-part">
+      <img src="card.png" alt="Card Inside" id="cardInside" class="card-part" style="display: none;">
+    </div>
+  </div>
+
+  <!-- Widget container with image and icons -->
+  <div class="corner-widget-container">
+    <!-- Positioned PNG image -->
+    <img class="widget-image" src="Text_for_icons.png" alt="Widget Image">
+    
+    <!-- Corner Widget -->
+    <div class="corner-widget">
+      <a href="scottmsg.html" target="_blank">
+        <img src="Logo Dad.png" alt="Icon 1">
+      </a>
+      <a href="jackmsg.html" target="_blank">
+        <img src="Logo Jack.png" alt="Icon 2">
+      </a>
+      <a href="sophiemsg.html" target="_blank">
+        <img src="Logo Sophie.png" alt="Icon 3">
+      </a>
+    </div>
+  </div>
+
+  <!-- JavaScript -->
+  <script src="script.js"></script>
+</body>
+</html>
